@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "name": "texasswede",
+  "version": "1.0.0",
+  "description": "Personal website for Karl-Henry Martinsson ",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karl-Henry Martinsson",
+  "license": "ISC"
+}
