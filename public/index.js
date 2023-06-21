@@ -14,9 +14,10 @@ $(window).ready(function () {
     });
 
     $(".popup-close").on("click", function() {
-        playSound("ding.mp3");
+        //playSound("ding.mp3");
         $(".popup-window").fadeTo(500,0, function() {
             $(".fade-in-on-load").fadeTo(750, 1);
+            $(".popup-window").hide();
         });
     });
 
