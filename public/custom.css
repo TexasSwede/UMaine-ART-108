@@ -1,5 +1,5 @@
   body {
-    font-family: 'Roboto', 'Tahoma','Arial', sans-serif;
+    font-family: 'Roboto', 'Tahoma', 'Arial', sans-serif;
     background-color: rgb(92, 110, 143);
     padding: 0;
     margin: 0;
@@ -13,6 +13,10 @@
     background-attachment: fixed;
   }
 
+  .hide-on-load {
+    display: none;
+  }
+
   .page-content {
     width: 100%;
     min-width: 890px;
@@ -20,33 +24,59 @@
     height: calc(100vh - 112px);
   }
 
+  .hidden {
+    visibility: hidden;
+  }
+
   .title-section {
     height: 80px;
     min-height: 80px;
     background-color: white;
-    color: rgb(67,82,105);
+    color: rgb(67, 82, 105);
     font-size: 40px;
     font-weight: 600;
-    padding-left: 35px;
+    padding-left: 20px;
     line-height: 80px;
     vertical-align: middle;
-    border-bottom: 2px solid rgb(67,82,105);
-    opacity: 0;
+    border-bottom: 2px solid rgb(67, 82, 105);
   }
 
-  .title-section > div {
+  .title-section>div {
     display: inline-block;
   }
 
-  .title-section > .logo {
+  .title-section>.logo {
     padding-top: 10px;
     padding-right: 45px;
     float: right;
-    xopacity: 1;
   }
 
-  .title-section > .logo > img:hover {
+  .title-section>.logo>img:hover {
     opacity: 0.75;
+  }
+
+  .title-home-icon-placeholder {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    top: -3px;
+  }
+  .title-home-icon {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    position: relative;
+    --fa-primary-color: rgb(77, 89, 109);
+    --fa-secondary-color: rgb(67, 82, 105);
+  }
+
+  .title-home-icon:hover {
+    xopacity: 0.85;
+    --fa-secondary-opacity: 1;
+    --fa-primary-color: rgb(67, 82, 105);
+    --fa-secondary-color: rgb(255, 218, 138);
   }
 
   .fade-in-on-load {
@@ -57,59 +87,67 @@
     height: 29px;
     line-height: 28px;
     background-color: white;
-    width:auto;
+    width: 100vw;
     text-align: center;
     font-size: 10px;
-    color:rgb(67,82,105);
-    border-top: 1px solid rgb(67,82,105);
-
+    color: rgb(67, 82, 105);
+    border-top: 1px solid rgb(67, 82, 105);
+    position: fixed;
+    bottom: 0;
+    left: 0;
   }
+
   .wrapper-bulletpoint-list {
-    width: calc( 60% - 25px);
-    min-width: 480px;
+    width: 495px;
+    min-width: 495px;
     float: left;
     padding-left: 20px;
     padding-top: 12px;
   }
+
   .wrapper-photo {
-    width: 40%;
+    width: calc(100% - 520px);
     min-width: 350px;
     display: inline-block;
   }
-  
+
   .wrapper-bulletpoint {
-    background-image: url( './assets/BulletPoint.svg' );
+    background-image: url('./assets/BulletPoint.svg');
     height: 50px;
     width: 493px;
     margin-top: 15px;
     cursor: pointer;
+    opacity: 0.95;
   }
 
   div.bulletpoint-icon {
-    display:inline-block;
-    height: 48px;
-    width: 49px;
+    display: inline-block;
+    height: 46px;
+    width: 46px;
     font-size: 32px;
     color: rgb(245, 245, 245);
     text-align: center;
     border-radius: 50%;
     position: relative;
-    background-color: rgb(67,82,105);
+    background-color: rgba(67, 82, 105, 0.95);
     border: 2px white solid;
   }
+
   div.bulletpoint-icon:hover {
     background-color: rgb(151, 159, 172);
+    opacity: 0.5;
   }
 
   svg.bulletpoint-icon {
     position: relative;
-    top: 7px;
+    top: 5px;
     left: 0;
   }
+
   .bulletpoint-label {
-    display:inline-block;
+    display: inline-block;
     font-size: 18pt;
-    font-family: 'Roboto', 'Tahoma','Arial', sans-serif;
+    font-family: 'Roboto', 'Tahoma', 'Arial', sans-serif;
     font-weight: 500;
     color: white;
     position: relative;
@@ -118,25 +156,25 @@
   }
 
   .photo-right {
-    float:right;
+    float: right;
     margin-right: 15px;
   }
 
-.bulletpoint-icon.first {
-  top: 0px;
-  font-size: 30px;
- }
+  .bulletpoint-icon.first {
+    top: 0px;
+    font-size: 30px;
+  }
 
- .bulletpoint-icon.first svg {
-  left: 4px;
- }
+  .bulletpoint-icon.first svg {
+    left: 4px;
+  }
 
- .bulletpoint-icon.second svg {
-  left: -1px;
- }
+  .bulletpoint-icon.second svg {
+    left: -1px;
+  }
 
- .popup-window {
-    background-color:  rgba(67,82,105, 0.90);
+  .popup-window {
+    background-color: rgba(67, 82, 105, 0.90);
     max-width: 700px;
     min-width: 700px;
     width: 75%;
@@ -146,52 +184,267 @@
     transform: translate(-50%, -50%);
     border-radius: 7px;
     border: 3px solid rgb(255, 255, 255);
-    opacity: 0;
- }
+  }
 
- .popup-close {
-  float:right;
-  font-size: 26px;
-  color: whitesmoke;
-  position: relative;
-  top: -14px;
-  left: 8px;
-  --fa-secondary-opacity: 1;
-  --fa-primary-color: whitesmoke;
-  --fa-secondary-color: rgba(110, 3, 3);
-  cursor: pointer;
-  line-height:32px;
- }
+  .popup-close {
+    float: right;
+    font-size: 26px;
+    color: whitesmoke;
+    position: relative;
+    top: -14px;
+    left: 8px;
+    --fa-secondary-opacity: 1;
+    --fa-primary-color: whitesmoke;
+    --fa-secondary-color: rgba(110, 3, 3);
+    cursor: pointer;
+    line-height: 32px;
+  }
 
- .popup-close:hover {
+  .popup-close:hover {
     --fa-secondary-color: rgb(165, 0, 0);
     font-size: 30px;
     top: -14px;
     left: 10px;
- }
- .popup-title {
+  }
+
+  .popup-title {
     font-size: 22px;
+    font-weight: 600;
     color: rgb(252, 225, 73);
     display: inline-block;
     width: 40%;
     position: fixed;
-    top: 8px;
+    top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
- }
+  }
 
- .popup-body {
-  padding: 32px 24px 15px 24px;
-  color: white;
-  font-size: 14px;
- }
- .popup-body > div {
-    text-align:justify;
+  .popup-body {
+    padding: 38px 24px 15px 24px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .popup-body>div {
+    text-align: justify;
     margin-top: 6px;
     line-height: 20px;
- }
- .popup-body > div.last-line {
+  }
+
+  .popup-body>div.last-line {
     margin-top: 10px;
     text-align: center;
-    font-size: 15px; 
- }
+    font-size: 15px;
+  }
+
+  .about-camping svg {
+    left: -1px !important;
+  }
+
+  .about-travel svg {
+    margin-left: 1px;
+  }
+
+  .about-scuba {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .about-woodworking svg {
+    margin-left: 3px;
+  }
+
+  .about-programming {
+    font-size: 30px !important;
+  }
+
+  .about-computers {
+    font-size: 30px !important;
+  }
+
+  .wrapper-photo-section {
+    position: relative;
+    width: calc(100% - 520px);
+    min-width: 495px;
+    height: 550px;
+    display: inline-block;
+  }
+
+  .photo-about {
+    position: absolute;
+  }
+
+  .photo-about.photo-kitchen {
+    z-index: 999;
+    top: 60px;
+  }
+
+  .photo-about.photo-camping {
+    z-index: 1000;
+    top: -45px;
+    left: 38%;
+  }
+
+  .photo-about.photo-scuba {
+    z-index: 998;
+    right: 20px;
+    bottom: 0px;
+    width: 345px;
+    height: auto;
+  }
+
+  .wrapper-infographics,
+  .wrapper-poster {
+    width: 100%;
+    display: flex;
+  }
+
+  .infographics-image,
+  .poster-image {
+    padding: 30px 5% 20px 5%;
+  }
+  .infographics-image {
+    min-width: 300px;
+    flex-basis: 30%;
+  }
+  .poster-image  {
+    flex-basis: 50%;
+    width: 50%;
+  }
+
+  .infographics-text {
+    width: 70%;
+    padding: 30px 5% 20px 5%;
+  }
+  .presentation-text {
+    width: 800px;
+    padding: 30px 5% 20px 5%;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .poster-text {
+    width: 50%;
+    padding: 30px 5% 20px 5%;
+  }
+
+  img.poster,
+  img.infographics {
+    width: 100%;
+    height: auto;
+  }
+
+
+  .infographics-text>div.text,
+  .poster-text>div.text,
+  .presentation-text>div.text,
+  .campaign-text>div.text {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px 25px;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgb(67, 82, 105);
+    font-weight: 500;
+    border-radius: 5px;
+    border: 2px solid rgb(245, 245, 245);
+  }
+
+  .infographics-text>div.text>h2,
+  .poster-text>div.text>h2,
+  .presentation-text>div.text>h2,
+  .campaign-text>div.text>h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(67, 82, 105);
+  }
+
+  .infographics-text>div.text a,
+  .poster-text>div.text a,
+  .presentation-text>div.text a,
+  .campaign-text>div.text a {
+    color: rgb(63, 63, 63);
+    text-decoration: none;
+  }
+
+  .infographics-text>div.text a:hover,
+  .presentation-text>div.text a:hover,
+  .poster-text>div.text a:hover,
+  .campaign-text>div.text a:hover {
+    color: rgb(255, 210, 7);
+  }
+
+  .campaign-slider {
+    width: 100%;
+    height: 610px;
+    position: relative;
+    margin-top: 30px;
+  }
+
+  .campaign-slider img {
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+  }
+
+  .campaign-slider img:first-child {
+    z-index: 1;
+  }
+
+  .campaign-slider img:nth-child(2) {
+    z-index: 0;
+  }
+
+  .campaign-navigation-button {
+    text-align: center;
+    position: relative;
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .campaign-text {
+    margin-top: 35px;
+    width: 100%;
+  }
+
+  .campaign-text>.text {
+    width: 550px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #717171;
+  }
+
+  .wrapper-presentation {
+    width: 100%;
+  }
+  #powerpoint-frame {
+    width: 800px;
+    height: 500px;
+    margin-left:  50%;
+    transform: translate(-50%, 0);
+    margin-top: 34px;
+  }
+  .presentation-hint {
+    font-size: 13px;
+    font-weight: 600;
+    color:rgb(67, 82, 105);
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    opacity: 85%;
+  }
