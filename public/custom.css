@@ -73,10 +73,9 @@
   }
 
   .title-home-icon:hover {
-    xopacity: 0.85;
     --fa-secondary-opacity: 1;
-    --fa-primary-color: rgb(67, 82, 105);
-    --fa-secondary-color: rgb(255, 218, 138);
+    --fa-primary-color: rgb(27, 27, 27);
+    --fa-secondary-color: rgb(187, 102, 32);
   }
 
   .fade-in-on-load {
@@ -294,23 +293,27 @@
     height: auto;
   }
 
-  .wrapper-infographics,
-  .wrapper-poster {
+  .wrapper-infographics, .wrapper-poster, .wrapper-campaign {
     width: 100%;
     display: flex;
   }
 
   .infographics-image,
+  .campaign-gallery,
   .poster-image {
     padding: 30px 5% 20px 5%;
   }
   .infographics-image {
-    min-width: 300px;
+    min-width: 250px;
+    width: 30%;
     flex-basis: 30%;
   }
+
+  .campaign-gallery,
   .poster-image  {
     flex-basis: 50%;
     width: 50%;
+    min-width: 250px;
   }
 
   .infographics-text {
@@ -323,9 +326,11 @@
     margin-left: 50%;
     transform: translate(-50%, 0);
   }
+  .campaign-text,
   .poster-text {
     width: 50%;
     padding: 30px 5% 20px 5%;
+    left: 50%;
   }
 
   img.poster,
@@ -377,7 +382,6 @@
     width: 100%;
     height: 610px;
     position: relative;
-    margin-top: 30px;
   }
 
   .campaign-slider img {
@@ -412,16 +416,12 @@
     display: inline-block;
   }
 
-  .campaign-text {
-    margin-top: 35px;
-    width: 100%;
-  }
-
-  .campaign-text>.text {
-    width: 550px;
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%, 0);
+  x.campaign-text>.text {}
+    .campaign-text{
+    xwidth: 550px;
+    xposition: fixed;
+    xleft: 50%;
+    xtransform: translate(-50%, 0);
   }
 
   .active,
