@@ -8,6 +8,6 @@ app.get('/', (req, res) => {
     res.sendFile(`${__dirname}/public/index.html`);
 });
 
-app.listen(8080, () => {
-    console.log('Application listening on port 8080!');
+app.listen(80, () => {
+    console.log('Application listening on port 80!');
 });
